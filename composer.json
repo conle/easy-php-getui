@@ -1,0 +1,21 @@
+{
+    "name": "conle/php-getui",
+    "description": "PHP-GeTui porting and changed",
+    "type": "library",
+    "require": {
+
+    },
+    "autoload": {
+        "psr-4": {
+            "PHPGeTui\\": "src/"
+        }
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "conle",
+            "email": "conlecl@163.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}
