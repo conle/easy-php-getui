@@ -35,7 +35,7 @@ $title = '推送标题';
 $content = '推送内容';
 $cid = 'ClientId';
 $trans = [];//附加data 可不传
-$rep = $easyPush->pushMsgToSingle($title, $content, $cid, $trans);//单推                              //获取二维码生成的地址
+$rep = $easyPush->pushMsgToSingle($title, $content, $cid, $trans);//单推     
 
 ```
 #### 属性部分描述
