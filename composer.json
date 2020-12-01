@@ -1,6 +1,6 @@
 {
-    "name": "conle/php-getui",
-    "description": "PHP-GeTui porting and changed",
+    "name": "conle/easy-php-getui",
+    "description": "Easy-PHP-GeTui",
     "type": "library",
     "require": {
 
