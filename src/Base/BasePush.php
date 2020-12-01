@@ -31,7 +31,7 @@ class BasePush extends \IGeTui
      * 设置参数
      * @var string[]
      */
-    protected $allow_name = ['phoneTypeList', 'offlineExpireTime', 'iosAutoBadge','sound'];
+    protected $allow_name = ['phoneTypeList', 'offlineExpireTime', 'iosAutoBadge', 'sound', 'android_package_name'];
 
     /**
      * @var string
@@ -83,14 +83,15 @@ class BasePush extends \IGeTui
         $template->set_transmissionType($transmissionType);//透传消息类型
         $template->set_transmissionContent(json_encode($listId));//透传内容
 
-        $intent = 'intent:#Intent;action=android.intent.action.oppopush;launchFlags=0x14000000;component=' . $this->android_package_name . '/io.dcloud.PandoraEntry;S.UP-OL-SU=true;S.title=' . $title . ';S.content=' . $content . ';S.payload=' . json_encode($data) . ';end';
-
-        $notify = new \IGtNotify();
-        $notify->set_title($title);
-        $notify->set_content($content);
-        $notify->set_intent($intent);
-        $notify->set_type(\NotifyInfo_Type::_intent);
-        $template->set3rdNotifyInfo($notify);
+        if ($this->android_package_name) {
+            $intent = 'intent:#Intent;action=android.intent.action.oppopush;launchFlags=0x14000000;component=' . $this->android_package_name . '/io.dcloud.PandoraEntry;S.UP-OL-SU=true;S.title=' . $title . ';S.content=' . $content . ';S.payload=' . json_encode($data) . ';end';
+            $notify = new \IGtNotify();
+            $notify->set_title($title);
+            $notify->set_content($content);
+            $notify->set_intent($intent);
+            $notify->set_type(\NotifyInfo_Type::_intent);
+            $template->set3rdNotifyInfo($notify);
+        }
 
         //APN高级推送
         $alertmsg = new \DictionaryAlertMsg();

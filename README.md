@@ -38,6 +38,13 @@ $trans = [];//附加data 可不传
 $rep = $easyPush->pushMsgToSingle($title, $content, $cid, $trans);//单推                              //获取二维码生成的地址
 
 ```
+#### 属性部分描述
+```
+$easyPush->android_package_name='安卓包名'
+$easyPush->offlineExpireTime='离线时间'//默认12小时 单位ms
+$easyPush->phoneTypeList=[手机类型]//默认['IOS', 'ANDROID'] 大写
+
+```
 
      
 
