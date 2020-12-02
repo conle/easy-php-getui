@@ -67,7 +67,6 @@ class BasePush extends IGeTui
     public function __construct($appid, $appkey, $masterSecret, $domainUrl='', $ssl = NULL)
     {
         $this->host = !empty($domainUrl) ? $domainUrl : 'http://sdk.open.api.igexin.com/apiex.htm';
-//        $this->igt = new IGeTui($domainUrl, $appkey, $masterSecret, $ssl);
         parent::__construct($this->host, $appkey, $masterSecret, $ssl);
         $this->appid = $appid;
         $this->igt=$this;
