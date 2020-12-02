@@ -1,5 +1,8 @@
 # easy-php-getui
-个推封装
+个推封装 V1.0
+## 说明
+1.x版本 简易封装个推 使用
+无消息队列等
 ## 安装
 
 ### 一、执行命令安装
@@ -18,7 +21,7 @@ composer require conle/easy-php-getui
 ```
 
 ## 使用
-####获取个推配置
+#### 获取个推配置
 1. 注册个推
    1. [官方网址](https://www.getui.com/)
 2. 获取配置
@@ -35,7 +38,7 @@ $title = '推送标题';
 $content = '推送内容';
 $cid = 'ClientId';
 $trans = [];//附加data 可不传
-$rep = $easyPush->pushMsgToSingle($title, $content, $cid, $trans);//单推     
+$rep = $easyPush->pushMsgToSingle($title, $content, $cid, $trans);//单推                              //获取二维码生成的地址
 
 ```
 #### 属性部分描述
